@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShArpChat.Gui", "ShArpChat.Gui\ShArpChat.Gui.csproj", "{CCFE9F63-2909-475E-AF2F-AD7A41E0E1ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCFE9F63-2909-475E-AF2F-AD7A41E0E1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCFE9F63-2909-475E-AF2F-AD7A41E0E1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCFE9F63-2909-475E-AF2F-AD7A41E0E1ED}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CCFE9F63-2909-475E-AF2F-AD7A41E0E1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCFE9F63-2909-475E-AF2F-AD7A41E0E1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCFE9F63-2909-475E-AF2F-AD7A41E0E1ED}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AC8CCF6-69C5-48A2-A095-71C87B91D2EE}
+	EndGlobalSection
+EndGlobal
