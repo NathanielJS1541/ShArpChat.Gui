@@ -13,6 +13,12 @@
 		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
 
+		<!--
+		Workaround to fix Windows builds crashing on launch without admin permissions.
+		See: https://github.com/microsoft/WindowsAppSDK/issues/3197
+		-->
+		<WindowsAppSdkDeploymentManagerInitialize>false</WindowsAppSdkDeploymentManagerInitialize>
+
 		<OutputType>Exe</OutputType>
 		<RootNamespace>ShArpChat.Gui</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -21,13 +27,13 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>ShArpChat.Gui</ApplicationTitle>
+		<ApplicationTitle>ShArpChat</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.sharpchat.gui</ApplicationId>
+		<ApplicationId>com.NathanielJS.ShArpChat</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>1.0.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
@@ -63,7 +69,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\..\ShArpChat\src\ShArpChat\ShArpChat.csproj" />
+		<!-- TODO: Should this be debug only? Use NuGet in release? -->
+		<!-- Local project reference to ShArpChat library. -->
+		<ProjectReference Include="..\..\..\ShArpChat\src\ShArpChat\ShArpChat.csproj" />
 	</ItemGroup>
 
 </Project>
