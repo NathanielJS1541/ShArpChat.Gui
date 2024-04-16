@@ -1,25 +1,31 @@
-﻿namespace ShArpChat.Gui
+﻿using System.Collections.ObjectModel;
+using ShArpChat.Network;
+
+namespace ShArpChat.Gui
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        public ObservableCollection<NetworkInterface> NetworkInterfaces { get; } = [];
+
+        public Command RefreshCommand { get; }
 
         public MainPage()
         {
+            RefreshCommand = new Command(OnRefresh);
+
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnRefresh(object sender)
         {
-            count++;
+            var networks = NetworkManager.GetSupportedInterfaces();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            NetworkInterfaces.Clear();
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            foreach (var network in networks)
+            {
+                NetworkInterfaces.Add(network);
+            }
         }
     }
-
 }
